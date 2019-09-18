@@ -27,7 +27,7 @@ public class Library {
         DynamoDB dynamoDB = new DynamoDB(ddb);
 
         Table table = dynamoDB.getTable("Taskmaster");
-        UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("id", id).withUpdateExpression("set imgUrl= :u").withValueMap(new ValueMap().withString(":u", "Everything happens all at once."));
+        UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("id", id).withUpdateExpression("set iMG= :u").withValueMap(new ValueMap().withString(":u", "Everything happens all at once."));
         UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
         return id;
     }
